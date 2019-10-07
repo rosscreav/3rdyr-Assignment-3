@@ -48,7 +48,11 @@ public class Test {
 		try {
 			//Creats the object and prints it out
 			RandomAccessFile rf= new RandomAccessFile("Overdraft.txt","rw");
-			System.out.println(rf.readLine());
+			//System.out.println(rf.readLine());
+			rf.writeBytes("Would you like to increase your overdraft? Please type Yes/No at the end of the line");
+			rf.seek(0);
+			System.out.println(rf.readLine()); 
+			rf.seek(rf.length());
 			//Takes input in through the console
 			String input = sc.nextLine();
 			//goes to the end of the file and leaves a space and appends the string
